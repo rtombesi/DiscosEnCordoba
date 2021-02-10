@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Icon } from "react-native-elements";
 import VinilosStack from "./VinilosStack";
 import CdsStack from "./CdsStack";
+import BarataStack from "./BarataStack";
 import SearchStack from "./SearchStack";
 import AccountStack from "./AccountStack";
 
@@ -36,6 +37,11 @@ export default function Navigation() {
           options={{ title: "Compactos" }}
         />
         <Tab.Screen
+          name="barata"
+          component={BarataStack}
+          options={{ title: "Baratas" }}
+        />
+        <Tab.Screen
           name="search"
           component={SearchStack}
           options={{ title: "Buscar" }}
@@ -59,6 +65,9 @@ function screenOptions(route, color) {
       break;
     case "cds":
       iconName = "disc";
+      break;
+    case "barata":
+      iconName = "currency-usd";
       break;
     case "search":
       iconName = "magnify";
